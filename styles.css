@@ -2,7 +2,10 @@ body {
     font-family: 'Poppins', sans-serif;
     font-style: italic;
     text-align: center;
-    background-color: #ffe6f2;
+    background-image: url('./background-image.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
     margin: 0;
     padding: 20px;
 }
