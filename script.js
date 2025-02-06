@@ -1,5 +1,4 @@
-
-const colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "brown", "black", "cyan"];
+const colors = ["#800080", "#8A2BE2", "#9370DB", "#9400D3", "#9932CC", "#BA55D3", "#DA70D6", "#D8BFD8", "#E6E6FA", "#4B0082"];
 let targetColor = "";
 let score = 0;
 
@@ -62,16 +61,18 @@ function handleColorGuess(selectedColor, button) {
         gameStatus.textContent = "Wrong guess. Try again! 😕";
         colorBox.classList.add("wrong");
         button.style.border = "4px solid red";
+        button.disabled = true; // Disable button
 
         setTimeout(() => {
             colorBox.classList.remove("wrong");
             gameStatus.textContent = "Guess the correct color!";
             button.style.border = "none";
+            button.disabled = false; // Re-enable button
         }, 1000);
     }
 }
-
-
-newGameButton.addEventListener("click", startNewGame);
-
-startNewGame();
+newGameButton.addEventListener("click", () => {
+    score = 0; // Reset score
+    scoreDisplay.textContent = `Score: ${score}`;
+    startNewGame();
+});
